@@ -1,0 +1,55 @@
+events_module.config:
+  path: 'admin/config/events-module'
+  defaults:
+    _form: '\Drupal\events_module\Forms\EventsModuleConfigForm'
+    _title: 'Events'
+  requirements:
+    _permission: 'access content'
+
+events_module.listing:
+  path: '/events/listing'
+  defaults:
+    _controller: '\Drupal\events_module\Controllers\EventsModuleController::listing'
+    _title: 'Events'
+  requirements:
+    _permission: 'access content'
+
+events_module.add:
+  path: '/events/form/add'
+  defaults:
+    _form: '\Drupal\events_module\Forms\AddEventForm'
+    _title: 'Add Event'
+  requirements:
+    _permission: 'access content'
+
+events_module.edit:
+  path: '/events/form/edit/{id}'
+  defaults:
+    _form: '\Drupal\events_module\Forms\EditEventForm'
+    _title: 'Edit Event'
+  requirements:
+    _permission: 'access content'
+
+events_module.delete:
+  path: '/events/form/delete/{id}'
+  defaults:
+    _form: '\Drupal\events_module\Forms\DeleteEventForm'
+    _title: 'Add / Edit Events'
+  requirements:
+    _permission: 'access content'
+
+events_module.events:
+  path: '/events'
+  defaults:
+    _controller: '\Drupal\events_module\Controllers\EventsModuleController::events'
+    _title: 'Events'
+  requirements:
+    _permission: 'access content'
+
+events_module.event_details:
+  path: '/events/{id}'
+  defaults:
+    _controller: '\Drupal\events_module\Controllers\EventsModuleController::event_details'
+    _title: 'Events'
+  requirements:
+    _permission: 'access content'
